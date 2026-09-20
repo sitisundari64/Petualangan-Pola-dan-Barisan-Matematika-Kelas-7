@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="id">
+ <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260918-05-13efa67","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YACgEZulLoA,0","Arial Narrow":"YAGyDvJ_4Ts,0","Arial Rounded MT Bold":"YAFcfoaHu-s,0","Arial":"YAGyDvJ_4Ts,0","Avenir Next":"YAFcfmNq6UY,0","Baloo 2":"YADK30bC6HQ,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,1","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAFcfvtOAUY,1","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","Courier Prime":"YAD1aFjegN8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAFdJpU7Kkk,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHQutsX00Q,0","Hanken Grotesk":"YAFcfhwp99E,0","Helvetica Neue":"YAFcf6CtJfI,0","Helvetica":"YAFcf6CtJfI,0","IBM Plex Mono":"YAFdJkmvhGI,0","Impact":"YAFcfnjI7Vk,0","Instrument Serif":"YAHFeOnZNEk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YADK3zbC6RM,0","JetBrains Mono":"YAFdJksXcAk,0","Josefin Sans":"YAFdJjvw9Ps,0","Lato":"YAFdJuFCnaw,0","Libre Baskerville":"YACgEUFdPdA,0","Lobster":"YAD8SnSjSFI,0","Lora":"YACgEXvxf8Q,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YAFdtQi73Xs,0","Nunito":"YAFdJoNRMmU,1","Oleo Script":"YACgEQQ14jI,0","Oswald":"YACgEQY10lw,0","Pacifico":"YADLjORQ1u4,0","Phantom Sans":"YAFdJvgJ5TU,0","Playfair Display":"YAFdJhem5V8,1","Plus Jakarta Sans":"YAGvf3_u0_Q,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YAFdJpYtCxE,1","Raleway":"YAFdJhmxbVQ,1","Roboto Slab":"YAFdJswIKAg,0","Rockwell":"YAFcfyVZnN0,0","Rye":"YACgEdQP21k,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Source Serif 4":"YACgEfdj394,0","Space Grotesk":"YADZ-dYEmhg,0","Space Mono":"YADW1-vpsoc,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","UV Display":"YAEdVfSSpYo,0","UV Sans":"YAFdJvgJ5TU,0","Ubuntu":"YACgERDU--Q,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YAD1aFjegN8,0","ui-sans-serif":"YACkoD1yZN0,0"}}');</script><script src="/_sdk/83d6dfdadcd4750a.telemetry_sdk.js" integrity="sha512-XS4Dvzp6vbagZS9vFErihvr8aO3S0tH78KWUefn06fmL4WYqryBtZj/IOLITYj7dFA4gPVvPg1W/JB1DK3uLNQ=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab Maya Matematika</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&amp;family=Space+Mono:wght@700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root { --navy:#071a52; --blue:#1565e8; --yellow:#ffd83d; --purple:#7c5ce6; --ink:#14213d; --mist:#eef5ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"DM Sans",sans-serif; color:var(--ink); background:#eef5ff; }
+    .math-grid { background-image:linear-gradient(rgba(21,101,232,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(21,101,232,.07) 1px,transparent 1px); background-size:28px 28px; }
+    .orb { position:absolute; border-radius:999px; filter:blur(1px); opacity:.65; animation:float 5s ease-in-out infinite; }
+    @keyframes float { 50% { transform:translateY(-13px) translateX(8px); } }
+    .view { display:none; animation:enter .38s ease both; }
+    .view.active { display:block; }
+    @keyframes enter { from { opacity:0; transform:translateY(10px) } to { opacity:1; transform:translateY(0) } }
+    .lab-card { border:1px solid #d8e5ff; box-shadow:0 12px 28px rgba(15,47,112,.09); }
+    .choice { transition:.18s ease; }
+    .choice:hover { transform:translateY(-3px); border-color:#1565e8; box-shadow:0 10px 18px rgba(21,101,232,.13); }
+    .choice.correct { background:#dcfce7!important; border-color:#16a34a!important; color:#14532d!important; }
+    .choice.wrong { background:#fee2e2!important; border-color:#dc2626!important; color:#7f1d1d!important; }
+    .option-dot { width:31px;height:31px;border-radius:50%;display:inline-grid;place-items:center;background:#e8f0ff;font-weight:800;flex:none; }
+    .pattern-row { letter-spacing:4px; color:#1565e8; font-size:1.55rem; line-height:1.4; font-weight:800; min-height:38px; }
+    .symbol-pulse { animation:pulse 1.4s ease-in-out infinite; }
+    @keyframes pulse { 50% { transform:scale(1.08); color:#7c5ce6; } }
+    .progress-step { flex:1; min-width:78px; text-align:center; font-size:.72rem; font-weight:700; color:#6b7a99; position:relative; }
+    .progress-step::before { content:""; display:block; margin:0 auto 7px; width:12px;height:12px;border:3px solid #b5c9ef;border-radius:50%;background:#fff; }
+    .progress-step.done, .progress-step.current { color:#1565e8; }
+    .progress-step.done::before, .progress-step.current::before { border-color:#1565e8; background:#1565e8; }
+    .progress-step.current::before { background:#ffd83d; border-color:#ffd83d; box-shadow:0 0 0 4px #fff1a5; }
+    .quiz-panel { display:none; }
+    .quiz-panel.active { display:block; animation:enter .3s ease both; }
+    .feedback { min-height:54px; }
+    .nav-btn.active { background:#dce9ff; color:#0b4fc2; }
+    input:focus, button:focus { outline:3px solid rgba(255,216,61,.75); outline-offset:3px; }
+    @media (max-width:640px) { .pattern-row{font-size:1.2rem}.progress-step{font-size:.62rem}.mobile-scroll{overflow-x:auto}.nav-btn{white-space:nowrap} }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="/_sdk/8de366929c5f3b48.data_sdk.js" type="text/javascript" integrity="sha512-TyQ8k8cZj66xe/aENmn6RyZpdOFZXbAo5+KBG3PeFM+Q4qMTHU8xAqmq4ADClNfPrstgQYV6OzZHwLTnElzB2g=="></script>
+  <script src="/_sdk/0ddbbee1c66b1212.editing_sdk.js" type="text/javascript" integrity="sha512-HQn5LM1yruQSbY78ATUril6QeOJ9xj7KqO64ltLtb4vBwI5Qv3/tloFFOndBPZTNZoeV5xKzuth5y6FTi9crsg=="></script>
+  <script src="/_sdk/765e1fea0cec97ce.resizing_sdk.js" type="text/javascript" integrity="sha512-IRTJnqww0+HQ5V/LlWEQrlD5SrYHaVvaeVoNe8HYQXoaguzUGheSd9+n9s6WOgaTcEH0g37DuINHZ9aqfzWjlw=="></script>
+ </head>
+ <body data-template-id="__page-root" class="w-full min-h-screen math-grid">
+  <div class="relative w-full overflow-hidden">
+   <div class="orb w-48 h-48 bg-yellow-300 top-10 -left-20"></div>
+   <div class="orb w-40 h-40 bg-purple-300 top-72 -right-16" style="animation-delay:-2s"></div>
+   <header id="app-header" class="hidden sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-blue-100">
+    <div class="w-full max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center gap-3 justify-between">
+     <button type="button" class="flex items-center gap-2 text-left" onclick="showView('home')"> <span class="w-10 h-10 rounded-xl bg-blue-700 text-yellow-300 grid place-items-center"><i data-lucide="atom" class="w-5 h-5"></i></span> <span><strong class="block text-sm text-blue-950">LAB MAYA</strong><small class="text-xs text-blue-600">Matematika VII</small></span> </button>
+     <div class="flex items-center gap-3">
+      <span id="student-chip" class="text-sm font-bold text-blue-950">Murid Penjelajah</span> <span class="rounded-full bg-yellow-300 px-3 py-1 text-sm font-extrabold text-blue-950"><span id="live-score">0</span> poin</span>
+     </div>
+    </div>
+   </header>
+   <main class="w-full max-w-7xl mx-auto px-4 py-6 md:py-10">
+    <section id="welcome" class="view active">
+     <div class="relative overflow-hidden rounded-[2rem] bg-blue-950 text-white p-7 md:p-12 shadow-2xl">
+      <div class="absolute inset-0 opacity-30 math-grid"></div>
+      <div class="relative grid md:grid-cols-2 gap-10 items-center">
+       <div>
+        <p data-template-id="welcome-eyebrow" class="canva-tag inline-flex bg-yellow-300 text-blue-950 px-3 py-1 rounded-full text-sm font-extrabold"></p>
+        <h1 data-template-id="welcome-title" class="canva-text mt-5 font-extrabold leading-tight tracking-tight"></h1>
+        <p data-template-id="welcome-subtitle" class="canva-text mt-3 text-blue-100 max-w-xl"></p>
+        <p data-template-id="welcome-goal" class="canva-text mt-5 border-l-4 border-yellow-300 pl-4 text-sm leading-relaxed text-blue-100"></p>
+        <form id="start-form" class="mt-7 grid sm:grid-cols-2 gap-3" novalidate>
+         <div>
+          <label data-template-id="name-label" class="canva-text block text-sm font-bold text-white mb-1" for="student-name"></label> <input id="student-name" type="text" class="w-full rounded-xl px-4 py-3 text-blue-950 border-2 border-transparent" autocomplete="name">
+         </div>
+         <div>
+          <label data-template-id="class-label" class="canva-text block text-sm font-bold text-white mb-1" for="student-class"></label> <input id="student-class" type="text" class="w-full rounded-xl px-4 py-3 text-blue-950 border-2 border-transparent">
+         </div><button data-template-id="start-button" class="canva-button sm:col-span-2 mt-2 rounded-xl px-5 py-4 font-extrabold text-blue-950 bg-yellow-300 hover:bg-yellow-200 transition flex items-center justify-center gap-2" type="submit"> <i data-lucide="rocket" class="w-5 h-5"></i><span data-template-id="start-button-label" class="canva-text"></span> </button>
+        </form>
+        <p id="start-message" class="mt-3 text-sm font-semibold text-yellow-200" aria-live="polite"></p>
+       </div>
+       <div class="relative min-h-[290px] grid place-items-center">
+        <div class="absolute w-72 h-72 rounded-full border border-blue-400"></div>
+        <div class="absolute w-56 h-56 rounded-full border border-dashed border-yellow-300 animate-spin" style="animation-duration:18s"></div>
+        <div class="relative grid grid-cols-3 gap-4 text-center font-black text-3xl md:text-4xl">
+         <span class="symbol-pulse text-yellow-300">●</span><span class="text-purple-300">2</span><span class="symbol-pulse text-blue-200">▲</span> <span class="text-blue-200">□</span><span class="w-20 h-20 rounded-2xl bg-white text-blue-700 grid place-items-center shadow-xl">+</span><span class="text-yellow-300">8</span> <span class="symbol-pulse text-purple-300">■</span><span class="text-blue-200">→</span><span class="symbol-pulse text-yellow-300">●</span>
+        </div>
+        <p data-template-id="hero-visual-label" class="canva-text absolute bottom-0 rounded-full bg-white/10 border border-white/20 px-4 py-2 text-sm font-bold"></p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="home" class="view">
+     <div class="rounded-3xl bg-white lab-card p-6 md:p-8">
+      <div class="flex flex-wrap gap-4 justify-between items-end">
+       <div>
+        <p data-template-id="home-eyebrow" class="canva-tag text-sm font-extrabold text-blue-600 uppercase tracking-wider"></p>
+        <h1 data-template-id="home-title" class="canva-text mt-1 font-extrabold text-blue-950"></h1>
+        <p data-template-id="home-copy" class="canva-text mt-2 text-slate-600 max-w-2xl"></p>
+       </div>
+       <div class="rounded-2xl bg-blue-50 p-4 text-center min-w-36">
+        <strong id="home-score" class="text-2xl text-blue-700">0</strong> <span data-template-id="score-label" class="canva-text block text-xs font-bold text-slate-500"></span>
+       </div>
+      </div>
+      <nav aria-label="Navigasi pembelajaran" class="mobile-scroll mt-7 flex gap-2 pb-1">
+       <button data-template-id="nav-home" class="canva-button nav-btn active rounded-xl px-3 py-2 text-sm font-bold" type="button" onclick="showView('home')"></button> <button data-template-id="nav-explore" class="canva-button nav-btn rounded-xl px-3 py-2 text-sm font-bold" type="button" onclick="showView('explore')"></button> <button data-template-id="nav-number" class="canva-button nav-btn rounded-xl px-3 py-2 text-sm font-bold" type="button" onclick="showView('number')"></button> <button data-template-id="nav-sequence" class="canva-button nav-btn rounded-xl px-3 py-2 text-sm font-bold" type="button" onclick="showView('sequence')"></button> <button data-template-id="nav-detective" class="canva-button nav-btn rounded-xl px-3 py-2 text-sm font-bold" type="button" onclick="showView('detective')"></button> <button data-template-id="nav-quiz" class="canva-button nav-btn rounded-xl px-3 py-2 text-sm font-bold" type="button" onclick="showView('quiz')"></button>
+      </nav>
+      <div class="mt-8 grid md:grid-cols-3 gap-4">
+       <button type="button" onclick="showView('explore')" class="text-left rounded-2xl p-5 bg-blue-700 text-white hover:-translate-y-1 transition shadow-lg"> <i data-lucide="shapes" class="w-7 h-7 text-yellow-300"></i> <h2 data-template-id="menu-explore-title" class="canva-text mt-5 font-extrabold"></h2><p data-template-id="menu-explore-copy" class="canva-text mt-2 text-sm text-blue-100"></p></button> <button type="button" onclick="showView('detective')" class="text-left rounded-2xl p-5 bg-purple-600 text-white hover:-translate-y-1 transition shadow-lg"> <i data-lucide="search" class="w-7 h-7 text-yellow-200"></i> <h2 data-template-id="menu-detective-title" class="canva-text mt-5 font-extrabold"></h2><p data-template-id="menu-detective-copy" class="canva-text mt-2 text-sm text-purple-100"></p></button> <button type="button" onclick="startQuiz()" class="text-left rounded-2xl p-5 bg-yellow-300 text-blue-950 hover:-translate-y-1 transition shadow-lg"> <i data-lucide="trophy" class="w-7 h-7"></i> <h2 data-template-id="menu-quiz-title" class="canva-text mt-5 font-extrabold"></h2><p data-template-id="menu-quiz-copy" class="canva-text mt-2 text-sm"></p></button>
+      </div>
+     </div>
+    </section>
+    <section id="explore" class="view">
+     <div class="rounded-3xl bg-white lab-card p-6 md:p-8">
+      <div class="flex justify-between gap-4 flex-wrap">
+       <div>
+        <p data-template-id="explore-eyebrow" class="canva-tag text-sm text-blue-600 font-extrabold uppercase"></p>
+        <h1 data-template-id="explore-title" class="canva-text mt-1 font-extrabold text-blue-950"></h1>
+       </div><button data-template-id="home-button-1" class="canva-button rounded-xl bg-blue-50 text-blue-700 px-4 py-2 font-bold" type="button" onclick="showView('home')"></button>
+      </div>
+      <p data-template-id="explore-intro" class="canva-text mt-4 rounded-xl bg-yellow-50 border-l-4 border-yellow-300 p-4 text-slate-700"></p>
+      <div class="mt-6 grid md:grid-cols-2 gap-5">
+       <article class="rounded-2xl bg-blue-50 p-5 border border-blue-100">
+        <h2 data-template-id="pattern-one-title" class="canva-text font-extrabold text-blue-950"></h2>
+        <div class="mt-3 space-y-1">
+         <div class="pattern-row">
+          ●
+         </div>
+         <div class="pattern-row">
+          ● ●
+         </div>
+         <div class="pattern-row">
+          ● ● ●
+         </div>
+         <div class="pattern-row">
+          ● ● ● ●
+         </div>
+        </div>
+       </article>
+       <article class="rounded-2xl bg-purple-50 p-5 border border-purple-100">
+        <h2 data-template-id="pattern-two-title" class="canva-text font-extrabold text-purple-950"></h2>
+        <div class="mt-3 space-y-1">
+         <div class="pattern-row text-purple-600">
+          ■
+         </div>
+         <div class="pattern-row text-purple-600">
+          ■ ■
+         </div>
+         <div class="pattern-row text-purple-600">
+          ■ ■ ■
+         </div>
+         <div class="pattern-row text-purple-600">
+          ■ ■ ■ ■
+         </div>
+        </div>
+       </article>
+       <article class="rounded-2xl bg-yellow-50 p-5 border border-yellow-200">
+        <h2 data-template-id="pattern-three-title" class="canva-text font-extrabold text-blue-950"></h2>
+        <div class="mt-3 space-y-1">
+         <div class="pattern-row text-yellow-600">
+          ▲
+         </div>
+         <div class="pattern-row text-yellow-600">
+          ▲ ▲
+         </div>
+         <div class="pattern-row text-yellow-600">
+          ▲ ▲ ▲
+         </div>
+         <div class="pattern-row text-yellow-600">
+          ▲ ▲ ▲ ▲
+         </div>
+        </div>
+       </article>
+       <article class="rounded-2xl bg-slate-50 p-5 border border-slate-200">
+        <h2 data-template-id="pattern-four-title" class="canva-text font-extrabold text-blue-950"></h2>
+        <div class="mt-3 space-y-1">
+         <div class="pattern-row text-blue-800">
+          □
+         </div>
+         <div class="pattern-row text-blue-800">
+          □ □
+         </div>
+         <div class="pattern-row text-blue-800">
+          □ □ □ □
+         </div>
+         <div class="pattern-row text-blue-800">
+          □ □ □ □ □ □ □ □
+         </div>
+        </div>
+       </article>
+      </div>
+      <div class="mt-6 rounded-2xl bg-blue-950 text-white p-6">
+       <p data-template-id="explore-question" class="canva-text font-bold"></p>
+       <div class="mt-4 grid sm:grid-cols-3 gap-3">
+        <button data-template-id="explore-choice-4" class="canva-button choice rounded-xl bg-white text-blue-950 p-4 font-extrabold" type="button" onclick="activityAnswer(this,false,'explore-feedback')"></button> <button data-template-id="explore-choice-5" class="canva-button choice rounded-xl bg-white text-blue-950 p-4 font-extrabold" type="button" onclick="activityAnswer(this,true,'explore-feedback')"></button> <button data-template-id="explore-choice-6" class="canva-button choice rounded-xl bg-white text-blue-950 p-4 font-extrabold" type="button" onclick="activityAnswer(this,false,'explore-feedback')"></button>
+       </div>
+       <div id="explore-feedback" class="feedback mt-4 font-bold" aria-live="polite"></div>
+       <div class="mt-4 flex flex-wrap gap-3">
+        <button data-template-id="previous-stage-button" class="canva-button rounded-xl border border-blue-300 px-4 py-2 font-bold" type="button" onclick="showActivityMessage('explore-feedback')"></button> <button data-template-id="next-stage-button" class="canva-button rounded-xl bg-yellow-300 text-blue-950 px-4 py-2 font-extrabold" type="button" onclick="showActivityMessage('explore-feedback')"></button> <button data-template-id="predict-button" class="canva-button rounded-xl bg-purple-500 px-4 py-2 font-extrabold" type="button" onclick="document.getElementById('explore-feedback').textContent='Pilih jumlah benda yang menurutmu muncul pada tahap berikutnya.'"></button>
+       </div>
+      </div>
+      <div class="mt-7 flex justify-between"><button data-template-id="back-button-1" class="canva-button font-bold text-blue-700" type="button" onclick="showView('home')"></button><button data-template-id="continue-number-button" class="canva-button rounded-xl bg-blue-700 text-white px-5 py-3 font-bold" type="button" onclick="showView('number')"></button>
+      </div>
+     </div>
+    </section>
+    <section id="number" class="view">
+     <div class="rounded-3xl bg-white lab-card p-6 md:p-8">
+      <div class="flex justify-between flex-wrap gap-4">
+       <div>
+        <p data-template-id="number-eyebrow" class="canva-tag font-extrabold text-blue-600 text-sm uppercase"></p>
+        <h1 data-template-id="number-title" class="canva-text mt-1 font-extrabold text-blue-950"></h1>
+       </div><button data-template-id="home-button-2" class="canva-button rounded-xl bg-blue-50 px-4 py-2 text-blue-700 font-bold" type="button" onclick="showView('home')"></button>
+      </div>
+      <div class="mt-6 grid lg:grid-cols-2 gap-6">
+       <div class="rounded-2xl bg-blue-950 p-7 text-white">
+        <p data-template-id="number-prompt" class="canva-text font-bold text-blue-100"></p>
+        <div class="mt-4 font-mono text-3xl md:text-4xl text-yellow-300 font-bold tracking-wider">
+         2 → 4 → 6 → 8 → ?
+        </div>
+        <p data-template-id="rule-label" class="canva-text mt-7 font-bold"></p>
+        <div class="mt-3 grid grid-cols-2 gap-3">
+         <button data-template-id="rule-plus-one" class="canva-button choice bg-white text-blue-950 rounded-xl p-3 font-bold" type="button" onclick="ruleAnswer(this,false)"></button> <button data-template-id="rule-plus-two" class="canva-button choice bg-white text-blue-950 rounded-xl p-3 font-bold" type="button" onclick="ruleAnswer(this,true)"></button> <button data-template-id="rule-plus-three" class="canva-button choice bg-white text-blue-950 rounded-xl p-3 font-bold" type="button" onclick="ruleAnswer(this,false)"></button> <button data-template-id="rule-plus-five" class="canva-button choice bg-white text-blue-950 rounded-xl p-3 font-bold" type="button" onclick="ruleAnswer(this,false)"></button> <button data-template-id="rule-minus-five" class="canva-button choice bg-white text-blue-950 rounded-xl p-3 font-bold" type="button" onclick="ruleAnswer(this,false)"></button> <button data-template-id="rule-minus-ten" class="canva-button choice bg-white text-blue-950 rounded-xl p-3 font-bold" type="button" onclick="ruleAnswer(this,false)"></button>
+        </div>
+       </div>
+       <div class="rounded-2xl bg-yellow-50 p-7 border border-yellow-200">
+        <h2 data-template-id="next-number-title" class="canva-text font-extrabold text-blue-950"></h2>
+        <p data-template-id="next-number-copy" class="canva-text mt-2 text-slate-600"></p>
+        <div class="grid grid-cols-3 gap-3 mt-5">
+         <button data-template-id="next-number-9" class="canva-button choice rounded-xl border-2 border-blue-100 bg-white p-4 font-extrabold text-blue-950" type="button" onclick="activityAnswer(this,false,'number-feedback')"></button> <button data-template-id="next-number-10" class="canva-button choice rounded-xl border-2 border-blue-100 bg-white p-4 font-extrabold text-blue-950" type="button" onclick="activityAnswer(this,true,'number-feedback')"></button> <button data-template-id="next-number-12" class="canva-button choice rounded-xl border-2 border-blue-100 bg-white p-4 font-extrabold text-blue-950" type="button" onclick="activityAnswer(this,false,'number-feedback')"></button>
+        </div>
+        <div id="number-feedback" class="feedback mt-6 text-blue-950 font-bold" aria-live="polite"></div>
+        <div id="rule-animation" class="hidden mt-4 rounded-xl bg-white p-4 font-mono font-bold text-blue-700">
+         2 <span class="text-purple-600">+2</span> 4 <span class="text-purple-600">+2</span> 6 <span class="text-purple-600">+2</span> 8 <span class="text-purple-600">+2</span> 10
+        </div>
+       </div>
+      </div>
+      <div class="mt-7 flex justify-between"><button data-template-id="back-button-2" class="canva-button font-bold text-blue-700" type="button" onclick="showView('explore')"></button><button data-template-id="continue-sequence-button" class="canva-button rounded-xl bg-blue-700 text-white px-5 py-3 font-bold" type="button" onclick="showView('sequence')"></button>
+      </div>
+     </div>
+    </section>
+    <section id="sequence" class="view">
+     <div class="rounded-3xl bg-white lab-card p-6 md:p-8">
+      <p data-template-id="sequence-eyebrow" class="canva-tag text-sm font-extrabold text-blue-600 uppercase"></p>
+      <h1 data-template-id="sequence-title" class="canva-text mt-1 font-extrabold text-blue-950"></h1>
+      <p data-template-id="sequence-copy" class="canva-text mt-2 text-slate-600"></p>
+      <div class="mt-6 grid md:grid-cols-2 gap-5">
+       <article class="rounded-2xl border border-blue-100 p-5 bg-blue-50">
+        <p data-template-id="sequence-one" class="canva-text font-mono text-xl font-bold text-blue-950"></p>
+        <div class="mt-4 flex gap-2"><button data-template-id="seq-one-14" class="canva-button choice flex-1 bg-white rounded-xl py-3 font-bold" type="button" onclick="activityAnswer(this,false,'sequence-feedback')"></button><button data-template-id="seq-one-16" class="canva-button choice flex-1 bg-white rounded-xl py-3 font-bold" type="button" onclick="activityAnswer(this,true,'sequence-feedback')"></button><button data-template-id="seq-one-18" class="canva-button choice flex-1 bg-white rounded-xl py-3 font-bold" type="button" onclick="activityAnswer(this,false,'sequence-feedback')"></button>
+        </div>
+       </article>
+       <article class="rounded-2xl border border-purple-100 p-5 bg-purple-50">
+        <p data-template-id="sequence-two" class="canva-text font-mono text-xl font-bold text-purple-950"></p>
+        <div class="mt-4 flex gap-2"><button data-template-id="seq-two-19" class="canva-button choice flex-1 bg-white rounded-xl py-3 font-bold" type="button" onclick="activityAnswer(this,false,'sequence-feedback')"></button><button data-template-id="seq-two-21" class="canva-button choice flex-1 bg-white rounded-xl py-3 font-bold" type="button" onclick="activityAnswer(this,true,'sequence-feedback')"></button><button data-template-id="seq-two-24" class="canva-button choice flex-1 bg-white rounded-xl py-3 font-bold" type="button" onclick="activityAnswer(this,false,'sequence-feedback')"></button>
+        </div>
+       </article>
+       <article class="rounded-2xl border border-yellow-200 p-5 bg-yellow-50">
+        <p data-template-id="sequence-three" class="canva-text font-mono text-xl font-bold text-blue-950"></p>
+        <div class="mt-4 flex gap-2"><button data-template-id="seq-three-15" class="canva-button choice flex-1 bg-white rounded-xl py-3 font-bold" type="button" onclick="activityAnswer(this,true,'sequence-feedback')"></button><button data-template-id="seq-three-18" class="canva-button choice flex-1 bg-white rounded-xl py-3 font-bold" type="button" onclick="activityAnswer(this,false,'sequence-feedback')"></button><button data-template-id="seq-three-25" class="canva-button choice flex-1 bg-white rounded-xl py-3 font-bold" type="button" onclick="activityAnswer(this,false,'sequence-feedback')"></button>
+        </div>
+       </article>
+       <article class="rounded-2xl border border-blue-100 p-5 bg-slate-50">
+        <p data-template-id="sequence-four" class="canva-text font-mono text-xl font-bold text-blue-950"></p>
+        <div class="mt-4 flex gap-2"><button data-template-id="seq-four-9" class="canva-button choice flex-1 bg-white rounded-xl py-3 font-bold" type="button" onclick="activityAnswer(this,false,'sequence-feedback')"></button><button data-template-id="seq-four-10" class="canva-button choice flex-1 bg-white rounded-xl py-3 font-bold" type="button" onclick="activityAnswer(this,true,'sequence-feedback')"></button><button data-template-id="seq-four-11" class="canva-button choice flex-1 bg-white rounded-xl py-3 font-bold" type="button" onclick="activityAnswer(this,false,'sequence-feedback')"></button>
+        </div>
+       </article>
+      </div>
+      <div id="sequence-feedback" class="feedback mt-5 rounded-xl bg-blue-950 text-white p-4 font-bold" aria-live="polite"></div>
+      <div class="mt-4 rounded-xl border border-dashed border-blue-300 p-4 font-mono text-blue-700 font-bold">
+       4 → <span class="text-purple-600">+4</span> → 8 → <span class="text-purple-600">+4</span> → 12 → <span class="text-purple-600">+4</span> → 16
+      </div>
+      <div class="mt-7 flex justify-between"><button data-template-id="back-button-3" class="canva-button font-bold text-blue-700" type="button" onclick="showView('number')"></button><button data-template-id="continue-detective-button" class="canva-button rounded-xl bg-purple-600 text-white px-5 py-3 font-bold" type="button" onclick="showView('detective')"></button>
+      </div>
+     </div>
+    </section>
+    <section id="detective" class="view">
+     <div class="rounded-3xl bg-white lab-card p-6 md:p-8">
+      <p data-template-id="detective-eyebrow" class="canva-tag text-sm font-extrabold text-purple-600 uppercase"></p>
+      <h1 data-template-id="detective-title" class="canva-text mt-1 font-extrabold text-blue-950"></h1>
+      <p data-template-id="detective-copy" class="canva-text mt-2 text-slate-600"></p>
+      <div class="mt-6 grid md:grid-cols-5 gap-3">
+       <button data-template-id="level-one" class="canva-button choice rounded-xl border p-4 bg-blue-50 text-left font-bold" type="button" onclick="detectiveAnswer(this,true)"></button> <button data-template-id="level-two" class="canva-button choice rounded-xl border p-4 bg-blue-50 text-left font-bold" type="button" onclick="detectiveAnswer(this,false)"></button> <button data-template-id="level-three" class="canva-button choice rounded-xl border p-4 bg-blue-50 text-left font-bold" type="button" onclick="detectiveAnswer(this,false)"></button> <button data-template-id="level-four" class="canva-button choice rounded-xl border p-4 bg-blue-50 text-left font-bold" type="button" onclick="detectiveAnswer(this,false)"></button> <button data-template-id="level-five" class="canva-button choice rounded-xl border p-4 bg-blue-50 text-left font-bold" type="button" onclick="detectiveAnswer(this,false)"></button>
+      </div>
+      <div class="mt-6 rounded-2xl bg-purple-600 text-white p-6">
+       <h2 data-template-id="detective-question-title" class="canva-text font-extrabold"></h2>
+       <p data-template-id="detective-question" class="canva-text mt-3 font-mono text-2xl text-yellow-200"></p>
+       <p data-template-id="detective-prompt" class="canva-text mt-4"></p>
+       <div class="mt-4 grid sm:grid-cols-3 gap-3">
+        <button data-template-id="detective-choice-a" class="canva-button choice bg-white text-purple-950 rounded-xl p-4 font-extrabold" type="button" onclick="activityAnswer(this,false,'detective-feedback')"></button> <button data-template-id="detective-choice-b" class="canva-button choice bg-white text-purple-950 rounded-xl p-4 font-extrabold" type="button" onclick="activityAnswer(this,true,'detective-feedback')"></button> <button data-template-id="detective-choice-c" class="canva-button choice bg-white text-purple-950 rounded-xl p-4 font-extrabold" type="button" onclick="activityAnswer(this,false,'detective-feedback')"></button>
+       </div>
+       <div id="detective-feedback" class="feedback mt-4 font-bold" aria-live="polite"></div>
+      </div>
+      <div class="mt-7 rounded-2xl border border-yellow-200 bg-yellow-50 p-6">
+       <h2 data-template-id="context-title" class="canva-text font-extrabold text-blue-950"></h2>
+       <p data-template-id="context-question" class="canva-text mt-3 text-slate-700"></p>
+       <div class="mt-4 flex gap-2 text-2xl text-blue-700">
+        🪑🪑🪑🪑 &nbsp; → &nbsp; 🪑🪑🪑🪑🪑🪑 &nbsp; → &nbsp; 🪑🪑🪑🪑🪑🪑🪑🪑
+       </div>
+       <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">
+        <button data-template-id="context-a" class="canva-button choice bg-white rounded-xl p-3 font-bold" type="button" onclick="activityAnswer(this,false,'context-feedback')"></button> <button data-template-id="context-b" class="canva-button choice bg-white rounded-xl p-3 font-bold" type="button" onclick="activityAnswer(this,true,'context-feedback')"></button> <button data-template-id="context-c" class="canva-button choice bg-white rounded-xl p-3 font-bold" type="button" onclick="activityAnswer(this,false,'context-feedback')"></button> <button data-template-id="context-d" class="canva-button choice bg-white rounded-xl p-3 font-bold" type="button" onclick="activityAnswer(this,false,'context-feedback')"></button>
+       </div>
+       <div id="context-feedback" class="feedback mt-4 font-bold text-blue-950" aria-live="polite"></div>
+      </div>
+      <div class="mt-7 flex justify-between"><button data-template-id="back-button-4" class="canva-button font-bold text-blue-700" type="button" onclick="showView('sequence')"></button><button data-template-id="start-quiz-button" class="canva-button rounded-xl bg-yellow-300 text-blue-950 px-5 py-3 font-extrabold" type="button" onclick="startQuiz()"></button>
+      </div>
+     </div>
+    </section>
+    <section id="quiz" class="view">
+     <div class="rounded-3xl bg-white lab-card p-6 md:p-8">
+      <div class="flex justify-between items-start gap-4">
+       <div>
+        <p data-template-id="quiz-eyebrow" class="canva-tag text-sm font-extrabold text-blue-600 uppercase"></p>
+        <h1 data-template-id="quiz-title" class="canva-text mt-1 font-extrabold text-blue-950"></h1>
+        <p data-template-id="quiz-copy" class="canva-text mt-2 text-slate-600"></p>
+       </div>
+       <div class="text-right"><strong id="quiz-count" class="text-blue-700">1 / 10</strong>
+        <div class="w-28 h-2 rounded-full bg-blue-100 mt-2">
+         <div id="quiz-progress" class="h-2 rounded-full bg-yellow-300" style="width:10%"></div>
+        </div>
+       </div>
+      </div>
+      <div id="quiz-1" class="quiz-panel active mt-7">
+       <h2 data-template-id="q1-question" class="canva-text text-xl font-extrabold text-blue-950"></h2>
+       <div class="mt-5 grid md:grid-cols-2 gap-3"><button data-template-id="q1a" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(1,this,false,'pola bilangan')"></button><button data-template-id="q1b" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(1,this,true,'pola bilangan')"></button><button data-template-id="q1c" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(1,this,false,'pola bilangan')"></button><button data-template-id="q1d" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(1,this,false,'pola bilangan')"></button>
+       </div>
+      </div>
+      <div id="quiz-2" class="quiz-panel mt-7">
+       <h2 data-template-id="q2-question" class="canva-text text-xl font-extrabold text-blue-950"></h2>
+       <div class="mt-5 grid md:grid-cols-2 gap-3"><button data-template-id="q2a" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(2,this,false,'aturan penambahan')"></button><button data-template-id="q2b" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(2,this,false,'aturan penambahan')"></button><button data-template-id="q2c" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(2,this,true,'aturan penambahan')"></button><button data-template-id="q2d" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(2,this,false,'aturan penambahan')"></button>
+       </div>
+      </div>
+      <div id="quiz-3" class="quiz-panel mt-7">
+       <h2 data-template-id="q3-question" class="canva-text text-xl font-extrabold text-blue-950"></h2>
+       <div class="mt-5 grid md:grid-cols-2 gap-3"><button data-template-id="q3a" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(3,this,false,'barisan')"></button><button data-template-id="q3b" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(3,this,true,'barisan')"></button><button data-template-id="q3c" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(3,this,false,'barisan')"></button><button data-template-id="q3d" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(3,this,false,'barisan')"></button>
+       </div>
+      </div>
+      <div id="quiz-4" class="quiz-panel mt-7">
+       <h2 data-template-id="q4-question" class="canva-text text-xl font-extrabold text-blue-950"></h2>
+       <div class="mt-5 grid md:grid-cols-2 gap-3"><button data-template-id="q4a" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(4,this,true,'pola berkurang')"></button><button data-template-id="q4b" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(4,this,false,'pola berkurang')"></button><button data-template-id="q4c" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(4,this,false,'pola berkurang')"></button><button data-template-id="q4d" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(4,this,false,'pola berkurang')"></button>
+       </div>
+      </div>
+      <div id="quiz-5" class="quiz-panel mt-7">
+       <h2 data-template-id="q5-question" class="canva-text text-xl font-extrabold text-blue-950"></h2>
+       <div class="mt-5 grid md:grid-cols-2 gap-3"><button data-template-id="q5a" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(5,this,false,'pola geometris')"></button><button data-template-id="q5b" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(5,this,true,'pola geometris')"></button><button data-template-id="q5c" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(5,this,false,'pola geometris')"></button><button data-template-id="q5d" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(5,this,false,'pola geometris')"></button>
+       </div>
+      </div>
+      <div id="quiz-6" class="quiz-panel mt-7">
+       <h2 data-template-id="q6-question" class="canva-text text-xl font-extrabold text-blue-950"></h2>
+       <div class="mt-5 grid md:grid-cols-2 gap-3"><button data-template-id="q6a" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(6,this,false,'kelipatan')"></button><button data-template-id="q6b" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(6,this,false,'kelipatan')"></button><button data-template-id="q6c" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(6,this,true,'kelipatan')"></button><button data-template-id="q6d" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(6,this,false,'kelipatan')"></button>
+       </div>
+      </div>
+      <div id="quiz-7" class="quiz-panel mt-7">
+       <h2 data-template-id="q7-question" class="canva-text text-xl font-extrabold text-blue-950"></h2>
+       <div class="mt-5 grid md:grid-cols-2 gap-3"><button data-template-id="q7a" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(7,this,false,'selisih barisan')"></button><button data-template-id="q7b" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(7,this,true,'selisih barisan')"></button><button data-template-id="q7c" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(7,this,false,'selisih barisan')"></button><button data-template-id="q7d" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(7,this,false,'selisih barisan')"></button>
+       </div>
+      </div>
+      <div id="quiz-8" class="quiz-panel mt-7">
+       <h2 data-template-id="q8-question" class="canva-text text-xl font-extrabold text-blue-950"></h2>
+       <div class="mt-5 grid md:grid-cols-2 gap-3"><button data-template-id="q8a" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(8,this,false,'masalah kontekstual')"></button><button data-template-id="q8b" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(8,this,true,'masalah kontekstual')"></button><button data-template-id="q8c" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(8,this,false,'masalah kontekstual')"></button><button data-template-id="q8d" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(8,this,false,'masalah kontekstual')"></button>
+       </div>
+      </div>
+      <div id="quiz-9" class="quiz-panel mt-7">
+       <h2 data-template-id="q9-question" class="canva-text text-xl font-extrabold text-blue-950"></h2>
+       <div class="mt-5 grid md:grid-cols-2 gap-3"><button data-template-id="q9a" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(9,this,true,'pola susunan benda')"></button><button data-template-id="q9b" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(9,this,false,'pola susunan benda')"></button><button data-template-id="q9c" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(9,this,false,'pola susunan benda')"></button><button data-template-id="q9d" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(9,this,false,'pola susunan benda')"></button>
+       </div>
+      </div>
+      <div id="quiz-10" class="quiz-panel mt-7">
+       <h2 data-template-id="q10-question" class="canva-text text-xl font-extrabold text-blue-950"></h2>
+       <div class="mt-5 grid md:grid-cols-2 gap-3"><button data-template-id="q10a" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(10,this,false,'penerapan pola')"></button><button data-template-id="q10b" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(10,this,false,'penerapan pola')"></button><button data-template-id="q10c" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(10,this,true,'penerapan pola')"></button><button data-template-id="q10d" class="canva-button choice rounded-xl border p-4 text-left font-bold" type="button" onclick="quizAnswer(10,this,false,'penerapan pola')"></button>
+       </div>
+      </div>
+      <div id="quiz-feedback" class="feedback mt-6 rounded-xl bg-blue-950 text-white p-4 font-bold" aria-live="polite"></div><button id="next-question" data-template-id="next-question-button" class="canva-button hidden mt-4 rounded-xl bg-yellow-300 px-5 py-3 font-extrabold text-blue-950" type="button" onclick="nextQuestion()"></button>
+     </div>
+    </section>
+    <section id="results" class="view">
+     <div class="rounded-3xl overflow-hidden bg-white lab-card">
+      <div class="bg-blue-950 text-white p-8 md:p-10 text-center">
+       <i data-lucide="award" class="mx-auto w-12 h-12 text-yellow-300"></i>
+       <h1 data-template-id="result-title" class="canva-text mt-3 font-extrabold"></h1>
+       <p id="achievement" class="mt-2 text-yellow-200 font-bold text-xl"></p>
+      </div>
+      <div class="p-6 md:p-10 grid lg:grid-cols-2 gap-8">
+       <div class="grid grid-cols-2 gap-3">
+        <div class="rounded-2xl bg-blue-50 p-4"><span data-template-id="result-name-label" class="canva-text text-xs font-bold text-slate-500"></span><strong id="result-name" class="block mt-1 text-blue-950"></strong>
+        </div>
+        <div class="rounded-2xl bg-blue-50 p-4"><span data-template-id="result-class-label" class="canva-text text-xs font-bold text-slate-500"></span><strong id="result-class" class="block mt-1 text-blue-950"></strong>
+        </div>
+        <div class="rounded-2xl bg-yellow-50 p-4"><span data-template-id="result-score-label" class="canva-text text-xs font-bold text-slate-500"></span><strong id="result-score" class="block mt-1 text-2xl text-blue-950"></strong>
+        </div>
+        <div class="rounded-2xl bg-green-50 p-4"><span data-template-id="result-correct-label" class="canva-text text-xs font-bold text-slate-500"></span><strong id="result-correct" class="block mt-1 text-2xl text-green-700"></strong>
+        </div>
+        <div class="rounded-2xl bg-red-50 p-4"><span data-template-id="result-wrong-label" class="canva-text text-xs font-bold text-slate-500"></span><strong id="result-wrong" class="block mt-1 text-2xl text-red-700"></strong>
+        </div>
+        <div class="rounded-2xl bg-purple-50 p-4"><span data-template-id="result-percent-label" class="canva-text text-xs font-bold text-slate-500"></span><strong id="result-percent" class="block mt-1 text-2xl text-purple-700"></strong>
+        </div>
+       </div>
+       <aside class="rounded-2xl border border-blue-100 p-6">
+        <h2 data-template-id="review-title" class="canva-text font-extrabold text-blue-950"></h2>
+        <p id="review-copy" class="mt-3 text-slate-600 leading-relaxed"></p>
+        <p class="mt-4 text-xs text-slate-500"><span data-template-id="time-label" class="canva-text"></span> <strong id="result-time"></strong></p>
+        <p id="save-message" class="mt-3 text-sm font-bold text-blue-700" aria-live="polite"></p>
+       </aside>
+      </div>
+      <div class="p-6 md:px-10 md:pb-10 flex flex-wrap gap-3">
+       <button data-template-id="retry-button" class="canva-button rounded-xl bg-yellow-300 px-5 py-3 font-extrabold text-blue-950" type="button" onclick="startQuiz()"></button> <button data-template-id="study-button" class="canva-button rounded-xl bg-blue-700 px-5 py-3 font-bold text-white" type="button" onclick="showView('explore')"></button> <button data-template-id="menu-button" class="canva-button rounded-xl bg-blue-50 px-5 py-3 font-bold text-blue-700" type="button" onclick="showView('home')"></button>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer class="w-full max-w-7xl mx-auto px-4 pb-8">
+    <div id="learning-progress" class="hidden rounded-2xl bg-white/80 border border-blue-100 p-4">
+     <div class="mobile-scroll flex gap-1 min-w-[620px]">
+      <div class="progress-step done">
+       Pola 1
+      </div>
+      <div class="progress-step">
+       Pola 2
+      </div>
+      <div class="progress-step">
+       Barisan
+      </div>
+      <div class="progress-step">
+       Prediksi
+      </div>
+      <div class="progress-step">
+       Kuis
+      </div>
+      <div class="progress-step">
+       Hasil
+      </div>
+     </div>
+    </div>
+    <p data-template-id="copyright-footer" class="canva-text mt-5 text-center text-sm font-semibold text-blue-700">Copyright © 2026 Siti Sundari, M.Pd.</p>
+   </footer>
+  </div>
+  <script>
+    let student = { name: "", className: "" };
+    let quizIndex = 1, correct = 0, wrong = 0, quizStart = null, answered = false, missedTopics = [];
+    let dataReady = false;
+
+    const dataHandler = { onDataChanged() { dataReady = true; } };
+
+    async function initializeData() {
+      const result = await window.dataSdk.init(dataHandler);
+      if (!result.isOk) dataReady = false;
+    }
+
+    function showView(id) {
+      document.querySelectorAll('.view').forEach(view => view.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+      const navMap = { home:'nav-home', explore:'nav-explore', number:'nav-number', sequence:'nav-sequence', detective:'nav-detective', quiz:'nav-quiz' };
+      if (navMap[id]) document.querySelector('[data-template-id="'+navMap[id]+'"]').classList.add('active');
+      document.getElementById('learning-progress').classList.toggle('hidden', id === 'welcome');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.getElementById('start-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const name = document.getElementById('student-name').value.trim();
+      const className = document.getElementById('student-class').value.trim();
+      if (!name || !className) {
+        document.getElementById('start-message').textContent = 'Isi nama dan kelasmu dulu, ya.';
+        return;
+      }
+      student = { name, className };
+      document.getElementById('student-chip').textContent = name + ' · ' + className;
+      document.getElementById('app-header').classList.remove('hidden');
+      showView('home');
+    });
+
+    function activityAnswer(button, isCorrect, feedbackId) {
+      const feedback = document.getElementById(feedbackId);
+      button.classList.add(isCorrect ? 'correct' : 'wrong');
+      feedback.textContent = isCorrect
+        ? '✓ Benar! Kamu menemukan aturannya. Perhatikan perubahan yang terjadi pada setiap tahap.'
+        : '✦ Belum tepat. Coba perhatikan berapa banyak benda atau angka yang berubah setiap tahap.';
+    }
+    function showActivityMessage(id) { document.getElementById(id).textContent = 'Amati pola dengan teliti. Bandingkan setiap tahap sebelum membuat prediksi.'; }
+    function ruleAnswer(button, isCorrect) {
+      activityAnswer(button, isCorrect, 'number-feedback');
+      if (isCorrect) {
+        document.getElementById('number-feedback').textContent = '✓ Tepat! Setiap bilangan bertambah 2.';
+        document.getElementById('rule-animation').classList.remove('hidden');
+      }
+    }
+    function detectiveAnswer(button, isCorrect) {
+      const feedback = document.getElementById('detective-feedback');
+      button.classList.add(isCorrect ? 'correct' : 'wrong');
+      feedback.textContent = isCorrect ? 'Level 1 aktif: pola bertambah tetap. Sekarang pecahkan kasus di bawah!' : 'Level ini akan segera terbuka setelah kamu menguasai pola bertambah tetap.';
+    }
+
+    function startQuiz() {
+      quizIndex = 1; correct = 0; wrong = 0; answered = false; missedTopics = []; quizStart = Date.now();
+      document.querySelectorAll('.quiz-panel').forEach((panel, index) => panel.classList.toggle('active', index === 0));
+      document.querySelectorAll('#quiz .choice').forEach(btn => btn.classList.remove('correct', 'wrong'));
+      document.getElementById('quiz-feedback').textContent = '';
+      document.getElementById('next-question').classList.add('hidden');
+      updateQuizHeader();
+      showView('quiz');
+    }
+    function updateQuizHeader() {
+      document.getElementById('quiz-count').textContent = quizIndex + ' / 10';
+      document.getElementById('quiz-progress').style.width = (quizIndex * 10) + '%';
+    }
+    function quizAnswer(question, button, isCorrect, topic) {
+      if (answered || question !== quizIndex) return;
+      answered = true;
+      button.classList.add(isCorrect ? 'correct' : 'wrong');
+      if (isCorrect) {
+        correct++;
+        document.getElementById('quiz-feedback').textContent = '✓ BENAR! Kamu berhasil membaca aturan polanya.';
+      } else {
+        wrong++;
+        missedTopics.push(topic);
+        document.getElementById('quiz-feedback').textContent = '✦ BELUM TEPAT. Lihat lagi selisih atau perubahan antar tahap.';
+      }
+      document.getElementById('next-question').classList.remove('hidden');
+      document.getElementById('live-score').textContent = correct * 10;
+      document.getElementById('home-score').textContent = correct * 10;
+    }
+    function nextQuestion() {
+      if (quizIndex === 10) { finishQuiz(); return; }
+      document.getElementById('quiz-' + quizIndex).classList.remove('active');
+      quizIndex++;
+      document.getElementById('quiz-' + quizIndex).classList.add('active');
+      document.getElementById('quiz-feedback').textContent = '';
+      document.getElementById('next-question').classList.add('hidden');
+      answered = false;
+      updateQuizHeader();
+    }
+    function durationText() {
+      const seconds = Math.max(1, Math.round((Date.now() - quizStart) / 1000));
+      return Math.floor(seconds / 60) + ' menit ' + (seconds % 60) + ' detik';
+    }
+    async function finishQuiz() {
+      const score = correct * 10;
+      const percentage = Math.round((correct / 10) * 100);
+      const duration = durationText();
+      document.getElementById('result-name').textContent = student.name;
+      document.getElementById('result-class').textContent = student.className;
+      document.getElementById('result-score').textContent = score;
+      document.getElementById('result-correct').textContent = correct;
+      document.getElementById('result-wrong').textContent = wrong;
+      document.getElementById('result-percent').textContent = percentage + '%';
+      document.getElementById('result-time').textContent = duration;
+      document.getElementById('achievement').textContent = percentage >= 90 ? 'Master Pola' : percentage >= 75 ? 'Detektif Pola Hebat' : percentage >= 60 ? 'Penjelajah Pola' : 'Terus Berlatih!';
+      const topics = [...new Set(missedTopics)];
+      document.getElementById('review-copy').textContent = topics.length
+        ? 'Ayo pelajari lagi: ' + topics.join(', ') + '. Ingat: amati perubahan, temukan aturannya, lalu buat prediksi.'
+        : 'Hebat! Kamu sudah memahami pola bilangan, susunan benda, dan penerapan pola dalam kehidupan sehari-hari.';
+      showView('results');
+      await saveResult(score, percentage, duration);
+    }
+    async function saveResult(score, percentage, duration) {
+      const message = document.getElementById('save-message');
+      message.textContent = 'Menyimpan hasil petualangan...';
+      const record = {
+        tanggal: new Date().toISOString(),
+        nama_murid: student.name,
+        kelas: student.className,
+        skor: score,
+        jumlah_benar: correct,
+        jumlah_salah: wrong,
+        persentase: percentage,
+        waktu_pengerjaan: duration
+      };
+      try {
+        const result = await window.dataSdk.create(record);
+        message.textContent = result.isOk ? '✓ Hasilmu sudah tersimpan di Data Canva.' : 'Hasil belum dapat dikonfirmasi. Coba periksa koneksi lalu ulangi kuis.';
+      } catch (error) {
+        message.textContent = 'Hasil belum dapat disimpan saat ini.';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeData();
+      lucide.createIcons();
+    });
+  </script>
+ </body>
+</html>
